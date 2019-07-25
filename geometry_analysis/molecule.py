@@ -45,10 +45,13 @@ class Molecule:
         """
 
         bonds = {}
+        print ("In molecule")
+        print (self._coordinates)
 
         for atom1 in range(self.num_atoms):
             for atom2 in range(atom1, self.num_atoms):
-                distance = calculate_distance(self.coordinates[atom1], self.coordinates[atom2])
+                distance = calculate_distance(self._coordinates[atom1], self._coordinates[atom2])
+                print ([self._coordinates[atom1],self._coordinates[atom2],distance])
 
                 if distance > min_bond and distance < max_bond:
                     bonds[(atom1, atom2)] = distance
@@ -58,4 +61,12 @@ class Molecule:
 
 if __name__ == "__main__":
     # Do something if this file is invoked on its own
+    import sys
+    print (sys.version)
+    name = 'water'
+    symbols = ['H','O','H']
+    coordinates = np.array([[2,0,0],[0,0,0],[-2,0,0]])
+    water_molecule = Molecule(name, symbols, coordinates)
+    new_coordinates = np.array([[5,0,0],[0,0,0],[-2,0,0]])
+    water_molecule.coordinates = new_coordinates
     pass
