@@ -5,6 +5,13 @@
 
 Welcome to geometry_analysis's documentation!
 =========================================================
+This module has a Molecule object and provides some manipulations.
+
+Available techniques:
+ - distance
+ - *bonds*
+
+A link to `Google <www.google.com>`_.
 
 .. toctree::
    :maxdepth: 2
